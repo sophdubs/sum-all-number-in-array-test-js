@@ -1,5 +1,15 @@
 function sumItems(array) {
-  // Sum all the numbers in the array
+  let sum = 0;
+  for (let a of array) {
+    if (Array.isArray(a)) {
+      sum += sumItems(a);
+    } else {
+      sum += a;
+    }
+  }
+  return sum;
 }
+
+
 
 module.exports = sumItems;
